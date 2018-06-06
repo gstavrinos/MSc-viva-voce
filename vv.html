@@ -11775,11 +11775,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><hr>    <hr></p>
 <center>
 <img src="resources/logo.png">
-
+<hr>    
 <h1><span style="color:#8e1731">Landing an autonomous UAV on a moving platform using only a front facing camera</span></h1>
-
+<hr>
 
 <h4>by</h4>
 <h3>George Stavrinos</h3>
@@ -11795,7 +11796,7 @@ div#notebook {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 0</span></h1>
 <h2>The outline</h2>
-
+<hr>
 <br>
 <br>
 </center><h3>
@@ -11816,6 +11817,7 @@ div#notebook {
      <li> Chapter 14: Results
      <li> Chapter 15: Future Work
      <li> Chapter 16: The end
+     <li> Appendix: Useful links
 </ul>
 </h3>
 </div>
@@ -11828,7 +11830,7 @@ div#notebook {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 1</span></h1>
 <h2>What is it about?</h2>
-
+<hr>
 <br>
 <br>
 
@@ -11851,7 +11853,7 @@ div#notebook {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 2</span></h1>
 <h2>Why this research topic?</h2>
-
+<hr>
 <br>
 <br>
 </center><h3>
@@ -11876,7 +11878,7 @@ div#notebook {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 3</span></h1>
 <h2>Research areas of interest</h2>
-
+<hr>
 <br>
 <br>
 </center><h3>
@@ -11898,7 +11900,10 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br><br><br></p>
 <p><center><h1><span style="color:#8e1731">Chapter 4</span></h1></p>
-<h2>Summary of state of the art</h2><style>
+<p><h2>Summary of state of the art</h2></p>
+<hr>
+
+<style>
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -11970,7 +11975,7 @@ tr:nth-child(even) {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 5</span></h1>
 <h2>Development Strategy</h2>
-
+<hr>
 <br>
 <br>
 
@@ -11986,7 +11991,9 @@ tr:nth-child(even) {
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 6</span></h1>
 <h2>The Hardware</h2>
-</center><div>
+
+</center><p><hr></p>
+<div>
 
 <p>
 <img src="resources/static_bebop.jpg" style="width: 35%; height: 35%; float: right">
@@ -12000,7 +12007,7 @@ Keypoints:
      <li> Global Positioning System sensor
      <li> Motion tracking sensor
      <li> Ability to stream image data through WiFi
-     <li> Available ROS drivers
+     <li> ROS drivers
 </ul>
 </h3>
 </p>
@@ -12016,6 +12023,8 @@ Keypoints:
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 7</span></h1>
 <h2>Landing zone detection</h2>
+<hr>
+
 <br><br>
 
 <img src="resources/camera_calibration.png"><h3>Camera calibration</h3></img>
@@ -12045,6 +12054,8 @@ Keypoints:
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 8</span></h1>
 <h2>Landing zone velocity estimation</h2>
+<hr>
+
 <br><br>
 
 \begin{equation}
@@ -12072,14 +12083,14 @@ v_z= \frac{\Delta x_z}{\Delta t}
 
 <h1><span style="color:#8e1731">Chapter 9</span></h1>
 <h2>Visual Odometry</h2>
-
+<hr>
 </center><p><br><br></p>
 <h3>
 Procedure:
 <ol>
-    <li> Test ETH implementation. Result: IMU raw data needed to provide accurate results.
-    <li> Test libviso2 combined with the robot_localization package. Result: IMU raw data needed to provide accurate results.
-    <li> Final result: Rely on the provided odomentry based on the on-board motion tracker.
+    <li> Test ETH implementation.<br><u>Result</u>: IMU raw data needed to provide accurate results.
+    <li> Test libviso2 combined with the robot_localization package.<br><u>Result</u>: IMU raw data needed to provide accurate results.
+    <li> <u>Final result</u>: Rely on the provided odometry based on the on-board motion tracker.
 </ol>
 </h3>
 </div>
@@ -12095,10 +12106,26 @@ Procedure:
 <h1><span style="color:#8e1731">Chapter 10</span></h1>
 
 <h2>Global Planning</h2>
+<hr>
 <br><br>
 
 </center><h3>
-Two alternatives:
+
+
+Input:
+<ol>
+    <li> Current robot position.
+    <li> Latest known position of the moving platform.
+    <li> Latest set of estimated velocities.
+</ol>
+
+<br>
+<hr>
+Velocity estimation noise smoothing by removing values that are not close to the mean of each set.
+<hr>
+
+<br>
+Two different strategies to choose the goal point:
 <ol>
     <li> First point that can be reached based on kinematic limitations.
     <li> Point that requires the lowest velocity.
@@ -12118,6 +12145,8 @@ Two alternatives:
 
 <h1><span style="color:#8e1731">Chapter 11</span></h1>
 <h2>Gazebo simulation</h2>
+<hr>
+
 <br><br>
 
 </center><h3>
@@ -12141,6 +12170,11 @@ Simulated Parrot Bebop commands:
     <li> Landing.
     <li> Emergency landing.
 </ul>
+<hr>
+Extra:
+<ul>
+    <li> Simulated moving platform.
+</ul>
 </h3><center>
 <img src="resources/gazebo_platforms.png"><h3>The two different types of platforms used in simulation</h3></img>
 </center>
@@ -12156,6 +12190,8 @@ Simulated Parrot Bebop commands:
 
 <h1><span style="color:#8e1731">Chapter 12</span></h1>
 <h2>Local planning</h2>
+<hr>
+
 <br><br>
 
 </center><h3>
@@ -12165,8 +12201,47 @@ Input:
     <li> Current robot position.
     <li> Current estimated platform position.
 </ol>
-</h3><p><img src="resources/global_planning_strategies.png"><h3>The two global planning strategies</h3></img></p>
+<hr>
+<center>
+Linear velocity:
+<hr>
+\begin{equation}
+\begin{cases} v_0 = 2 \times \sqrt{(x_r - x_h)^2 + (y_r - y_h)^2} \times \cos{(\tan^{-1}{(\frac{y_h - y_r}{x_h - x_r})} - yaw_r)} \\
+v_x = v_0, v_0\in[v_{min},v_{max}] \\
+v_x = v_{min}, v_0\in(-\inf,v_{min}) \\ 
+v_x = v_{max}, v_0\in(v_{max},+\inf) \end{cases}
+\end{equation}
+<hr>
+\begin{equation}
+\begin{cases} v_0 = 2 \times \sqrt{(x_r - x_h)^2 + (y_r - y_h)^2} \times \sin{(\tan^{-1}{(\frac{y_h - y_r}{x_h - x_r})} - yaw_r)} \\
+v_y = v_0, v_0\in[v_{min},v_{max}] \\
+v_y = v_{min}, v_0\in(-\inf,v_{min}) \\ 
+v_y = v_{max}, v_0\in(v_{max},+\inf) \end{cases}
+\end{equation}
+<hr>
+\begin{equation}
+v_z = 2 \times (z_h - (z_r - 0.1))
+\end{equation}
+<hr>
+Angular Velocity:
+<hr>
+\begin{equation}
+v_{yaw} = (\tan^{-1}{(\frac{y_h - y_r}{x_h - x_r})} - yaw_r) \times 10
+\end{equation}
+<hr>
+</center>
 
+Send the landing command when:
+<ol>
+    <li> The two dimensional distance between the robot and the moving platform on the x and y axes is less than 20cm.
+    <li> The distance (difference) in the z axis between the robot and the moving platform is less than 20cm.
+    <li> The robot is above the moving platform.
+</ol>
+
+<br>
+Note: When a landing command is sent, always the emergency command is used.
+
+</h3>
 </div>
 </div>
 </div>
@@ -12177,6 +12252,8 @@ Input:
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 13</span></h1>
 <h2>System architecture</h2>
+<hr>
+
 <br><br>
 <img src="resources/architecture.png"><h3>The overall system architecture</h3></img>
 </center>
@@ -12187,11 +12264,114 @@ Input:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><br><br><br><br><br></p>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style><p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 14</span></h1>
 <h2>Results</h2>
+<hr>
+
+
+<h3>
+Comparison between the two global planning strategies:
+<br>
+<table>
+  <tr>
+    <th>Total Number of tests</th>
+    <th>Strategy</th>
+    <th>Helipad Velocity</th>
+    <th>Number of failed landings</th>
+    <th>Failure Percentage</th>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>First Reachable</td>
+    <td>2.0 m/s</td>
+    <td>780</td>
+    <td>78%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Lowest Velocity</td>
+    <td>2.0 m/s</td>
+    <td>321</td>
+    <td>32.1%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>First Reachable</td>
+    <td>1.5 m/s</td>
+    <td>721</td>
+    <td>72.1%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Lowest Velocity</td>
+    <td>1.5 m/s</td>
+    <td>260</td>
+    <td>26%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>First Reachable</td>
+    <td>1.0 m/s</td>
+    <td>653</td>
+    <td>65.3%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Lowest Velocity</td>
+    <td>1.0 m/s</td>
+    <td>174</td>
+    <td>17.4%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>First Reachable</td>
+    <td>0.5 m/s</td>
+    <td>601</td>
+    <td>60.1%</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Lowest Velocity</td>
+    <td>0.5 m/s</td>
+    <td>89</td>
+    <td>8.9%</td>
+  </tr>
+</table>
+</h3>
 
 <br><br>
+<hr>
+</center>
+<h3>
+Other results that were not included here:
+<ol>
+    <li> Percentage of error in velocity estimation
+    <li> Percentage of landing failure, with perfect velocity estimation
+</ol>
+</h3>
+<hr>
+<center>
+<img src="resources/path_demo.png">
+<h3>Trajectories on a succesful landing. <a style="color:blue"> Blue: Helipad</a>. <a style="color:green">Green: Robot</a>.</h3></img>
+<hr>
+
 <video controls width="640" height="480" src="resources/moving_plat_demo1.mp4"/>
 </center>
 </div>
@@ -12216,14 +12396,16 @@ Input:
 
 <h1><span style="color:#8e1731">Chapter 15</span></h1>
 <h2>Future Work</h2>
-<br><br>
+<hr>
+
 
 </center><h3>
-Two alternatives:
-<ol>
-    <li> First point that can be reached based on kinematic limitations.
-    <li> Point that requires the lowest velocity.
-</ol>
+<ul>
+    <li> Improve the detection method by using other already implemented methods, when on stable state.
+    <li> Expand capabilities for unpredictable trajectories using probabilistic and prediction-based algorithms.
+    <li> Expand capabilities by adding obstacle avoidance.
+    <li> Add capabilities landing capabilities for complex movement on the z axis (like a floating platform).
+</ul>
 </h3>
 </div>
 </div>
@@ -12234,12 +12416,43 @@ Two alternatives:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br><br><br></p>
 <center><h1><span style="color:#8e1731">Chapter 16</span></h1>
-</center><p><div></p>
-<center>
-<img src="resources/the_end.gif">
+<hr>
 
-<h2>Questions?</h2>
+<img src="resources/the_end.gif"></img>
+
+<h2> Questions? </h2>
+
 </center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br><br><br><br><br></p>
+<center>
+
+<h1><span style="color:#8e1731">Appendix</span></h1>
+<h2>Useful Links</h2>
+<hr>
+
+<br><br>
+
+</center><h3>
+
+<ul>
+    <li> <a href="https://github.com/gstavrinos/ar_helipad">ar_helipad ROS package</a>
+    <li> <a href="https://github.com/gstavrinos/tf_velocity_estimator">tf_velocity_estimator ROS package</a>
+    <li> <a href="https://github.com/gstavrinos/bebop_simulator">bebop_simulator ROS package</a>
+    <li> <a href="https://github.com/gstavrinos/aerial_global_planner">aerial_global_planner ROS package</a>
+    <li> <a href="https://github.com/gstavrinos/aerial_local_planner">aerial_local_planner ROS package</a>
+    <li> <a href="http://wiki.ros.org/Tutorials/Landing%20an%20autonomous%20UAV%20on%20a%20moving%20platform%20using%20only%20a%20front%20facing%20camera">ROS Wiki Tutorial</a>
+
+</ul>
+
+</h3><p><hr><hr></p>
+
 </div>
 </div>
 </div>
